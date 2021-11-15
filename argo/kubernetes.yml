@@ -117,4 +117,5 @@ spec:
                 name: argocd-server
                 port:
                   name: https
+            path: /argocd
             pathType: Prefix
