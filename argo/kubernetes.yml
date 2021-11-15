@@ -96,3 +96,23 @@ spec:
                   name: http
             path: /demo
             pathType: Prefix
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-server-ingress
+  namespace: argocd
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: ""
+      http:
+        paths:
+          - backend:
+              service:
+                name: argocd-server
+                port:
+                  name: https
+            path: /argocd
+            pathType: Prefix
