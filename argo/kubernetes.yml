@@ -108,7 +108,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:
   rules:
-  - host: "argocd.local"
+  - host: ""
     http:
       paths:
       - backend:
