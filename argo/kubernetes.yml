@@ -109,9 +109,12 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "https"
 spec:
   rules:
-  - host: ""
-    http:
-      paths:
-      - backend:
-          serviceName: argocd-server
-          servicePort: https
+    - host: ""
+      http:
+        paths:
+          - backend:
+              service:
+                name: argocd-server
+                port:
+                  name: https
+            pathType: Prefix
